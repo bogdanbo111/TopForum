@@ -1,0 +1,18 @@
+.pageup {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #c99c47;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.fa-chevron-up {
+    color: #c99c47;
+    font-size: 21px;
+    font-weight: 100;
+
+}

@@ -1,0 +1,141 @@
+.sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  &__item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    margin: 30px 14px;
+    text-align: center;
+    &_title {
+      color: #c99c47;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &_img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 263px;
+      min-height: 160px;
+      border: 1px solid #f3ebda;
+      margin-top: 15px;
+    }
+    &_name {
+      font-size: 17px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 15px;
+    }
+    &_text {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 20px;
+      text-align: center;
+      margin-top: 15px;
+    }
+    &_btn {
+      margin: 15px auto;
+    }
+    span {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 20px;
+      text-align: center;
+    }
+    &_span {
+      display: none;
+    }
+  }
+}
+.event__card {
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 18px;
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 22px 0;
+    &:nth-child(5) {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    @media screen and (max-width: 720px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      &_descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    &_img {
+      margin-right: 30px;
+      max-width: 360px;
+      height: 220px;
+      position: relative;
+      @media screen and (max-width: 720px) {
+        margin-right: 0;
+        margin-bottom: 10px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &_sold {
+      color: #ec3e3e;
+      font-size: 29px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 7px 48px;
+      border: 3px solid #ec3e3e;
+      position: absolute;
+      top: 70px;
+      left: 80px;
+      transform: rotate(25deg);
+    }
+    &_name {
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    &_day {
+      color: #c99c47;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+    &_text {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 20px;
+      margin-top: 15px;
+      margin-bottom: 20px;
+      min-height: 103px;
+      height: 103px;
+      overflow-y: hidden;
+    }
+    &_btn {
+      margin: 15px auto;
+    }
+  }
+}

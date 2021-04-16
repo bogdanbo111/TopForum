@@ -1,0 +1,300 @@
+
+/*  COLORS
+========================================= */
+
+$bg-color: #ffffff;
+$main: #c99c47 ;
+
+/*  MIXINS
+========================================= */
+
+@mixin animation($animation) {
+  -webkit-animation: #{$animation};
+  -moz-animation: #{$animation};
+  -o-animation: #{$animation};
+  animation: #{$animation};
+}
+
+@mixin animation-delay($animation-delay) {
+  -webkit-transition-delay: #{$animation-delay};
+  -moz-transition-delay: #{$animation-delay};
+  -o-transition-delay: #{$animation-delay};
+  transition-delay: #{$animation-delay};
+}
+
+@mixin keyframes($keyframes) {
+  @-webkit-keyframes #{$keyframes} { @content; }
+  @-moz-keyframes #{$keyframes} { @content; }
+  @-o-keyframes #{$keyframes} { @content; }
+  @keyframes #{$keyframes} { @content; }
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: #{$transition};
+  -moz-transition: #{$transition};
+  -o-transition: #{$transition};
+  transition: #{$transition};
+}
+
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: #{$transition-delay};
+  -moz-transition-delay: #{$transition-delay};
+  -o-transition-delay: #{$transition-delay};
+  transition-delay: #{$transition-delay};
+}
+
+/*  RESET
+========================================= */
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*  MENU ICON
+========================================= */
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  z-index: 19;
+
+  .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: $main;
+    border-radius: 10px;
+    @include transform(translate(-50%, -50%));
+    @include transition(margin .4s ease .4s, width .4s ease);
+
+    &:nth-of-type(1) {
+      margin-top: -20px;
+      margin-left: -20px;
+      @include transform(translate(-50%, -50%) rotate(45deg));
+    }
+
+    &:nth-of-type(2) {
+      margin-top: -20px;
+      @include transform(translate(-50%, -50%) rotate(-45deg));
+    }
+
+    &:nth-of-type(3) {
+      margin-top: -20px;
+      margin-left: 20px;
+    }
+
+    &:nth-of-type(4) {
+      margin-left: -20px;
+    }
+
+    &:nth-of-type(5) {
+
+    }
+
+    &:nth-of-type(6) {
+      margin-left: 20px;
+    }
+
+    &:nth-of-type(7) {
+      margin-top: 20px;
+      margin-left: -20px;
+    }
+
+    &:nth-of-type(8) {
+      margin-top: 20px;
+    }
+
+    &:nth-of-type(9) {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  &.clicked {
+    .dot {
+      @include transition(margin .4s ease, width .4s ease .4s);
+      margin-left: 0;
+      margin-top: 0;
+
+      &:nth-of-type(1) {
+        width: 50px;
+      }
+
+      &:nth-of-type(2) {
+        width: 50px;
+      }
+    }
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+* {
+  box-sizing: border-box;
+}
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+h1 {
+  font-weight: 400;
+  font-size: 3em;
+  text-align: center;
+}
+.outer-menu {
+  display: none;
+  top: 65px;
+  left: 0;
+  z-index: 10;
+  @media screen and (max-width: 720px) {
+    display: block;
+  }
+}
+.outer-menu .checkbox-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 20;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+
+.outer-menu .checkbox-toggle:checked + .hamburger > div {
+  background-color: darken($main, 20%);
+
+  &:nth-of-type(2) {
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+
+  &:nth-of-type(4) {
+    margin-left: -10px;
+    margin-top: 10px;
+  }
+
+  &:nth-of-type(6) {
+    margin-left: 10px;
+    margin-top: -10px;
+  }
+
+
+  &:nth-of-type(8) {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+}
+
+
+.outer-menu .checkbox-toggle:checked + .hamburger > div:after {
+  opacity: 0;
+}
+.outer-menu .checkbox-toggle:checked ~ .hamburger-menu {
+  pointer-events: auto;
+  visibility: visible;
+  display: flex;
+}
+.outer-menu .checkbox-toggle:checked ~ .hamburger-menu > div {
+  transform: scale(1);
+  transition-duration: .75s;
+}
+.outer-menu .checkbox-toggle:checked ~ .hamburger-menu > div > div {
+  opacity: 1;
+  transition: opacity .4s ease .4s;
+}
+
+.outer-menu .hamburger {
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer-menu .hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
+  backface-visibility: hidden;
+  outline: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.outer-menu .hamburger-menu > div {
+  width: 300vw;
+  height: 330vw;
+  color: lightgrey;
+  background: rgba(201,156,71,0.9);
+  border-radius: 50%;
+  transition: all .4s ease;
+  flex: none;
+  transform: scale(0);
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer-menu .hamburger-menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity .4s ease;
+  overflow-y: auto;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer-menu .hamburger-menu > div > div > ul {
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
+  display: block;
+  max-height: 100vh;
+}
+.outer-menu .hamburger-menu > div > div > ul > li {
+  padding: 0;
+  margin: 1em;
+  font-size: 24px;
+  display: block;
+  @media screen and (max-width: 355px) {
+    font-size: 20px;
+  }
+}
+.outer-menu .hamburger-menu > div > div > ul > li > a {
+  position: relative;
+  display: inline;
+  cursor: pointer;
+  transition: color .4s ease;
+  color: white;
+}

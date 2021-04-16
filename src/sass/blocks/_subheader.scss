@@ -1,0 +1,40 @@
+.subheader-section {
+  position: relative;
+}
+
+.subheader-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+.subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    height: 64px;
+    display: block;
+  }
+  &__events {
+    margin-left: 30px;
+    display: block;
+    height: 40px;
+    text-decoration: none;
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
+    &_img {
+      border: 1px solid black ;
+      width: 37px;
+      height: 37px;
+      border-radius: 3px;
+      display: inline-block;
+      padding: 3px 8px;
+    }
+    &_descr {
+      display: inline-block;
+      margin-left: 12px;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.up {
+  height: 56px;
+  background-color: #323232;
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+}

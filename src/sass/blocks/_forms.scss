@@ -1,0 +1,209 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
+
+  &__fill {
+    width: 414px;
+    height: 58px;
+    border: 2px solid #c99c47;
+    color: #c99c47;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 54px;
+    @media screen and (max-width: 576px) {
+      width: 290px;
+    }
+  }
+
+  &__bird {
+    width: 22px;
+    height: 8px;
+    margin: 7px auto;
+  }
+
+  &__block {
+    margin-top: 34px;
+  }
+
+  &__field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 11px;
+    max-width: 660px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    span {
+      text-decoration: underline;
+    }
+
+  &_label {
+    flex-basis: 200px;
+    margin-bottom: 0;
+    color: #606060;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: normal;
+    @media screen and (max-width: 576px) {
+      margin-left: 15px;
+    }
+  }
+
+  &_select, &_sel {
+    width: 427px;
+    height: 50px;
+    border: 1px solid #e8d8b6;
+    color: #606060;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 14px 18px 18px 18px;
+    margin-left: 25px;
+    outline: none;
+    background-color: #fff;
+    background-image: url("../../img/conf.png"), linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: 1.65em auto, 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    @media screen and (max-width: 720px) {
+      width: 326px;
+    }
+    @media screen and (max-width: 576px) {
+      margin-left: 15px;
+    }
+    @media screen and (max-width: 355px) {
+      width: 290px;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+      width: 360px;
+
+      &:hover {
+        background-color: #e8d8b6;
+      }
+    }
+  }
+
+  &_select::-ms-expand {
+    display: none;
+  }
+
+  &_select:focus {
+    outline: none;
+  }
+
+  &_select option {
+    font-weight: normal;
+  }
+
+  &_btn {
+    margin-right: 185px;
+    @media screen and (max-width: 720px) {
+      margin-right: 85px;
+      margin-left: 15px;
+    }
+  }
+
+  &_checkbox {
+    width: 306px;
+    @media screen and (max-width: 720px) {
+      width: 206px;
+      font-size: 13px;
+    }
+    @media screen and (max-width: 576px) {
+      margin-left: 15px;
+    }
+    @media screen and (max-width: 355px) {
+      width: 180px;
+    }
+  }
+}
+}
+
+.select {
+  position: relative;
+  width: 427px;
+  height: 50px;
+  border: 1px solid #e8d8b6;
+  color: #606060;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 0;
+  margin: 20px auto;
+  outline: none;
+  background-color: #fff;
+  background-image: url("../../img/conf.png"), linear-gradient(to bottom, #ffffff 0%,#ffffff 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: 1.65em auto, 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  @media screen and (max-width: 576px) {
+    width: 310px;
+  }
+  &__tab {
+    display: none;
+    list-style: none;
+    cursor: pointer;
+    width: calc(100% + 1px);
+    background-color: white;
+    border-left: 1px solid #e8d8b6;
+    border-right: 1px solid #e8d8b6;
+    padding: 0 17px;
+    &:nth-child(1) {
+      margin-top: 49px;
+      border-top: 1px solid #e8d8b6;
+    }
+    &:nth-child(3) {
+      border-bottom: 1px solid #e8d8b6;
+    }
+    &:hover {
+      background-color: deepskyblue;
+    }
+    &_active {
+      display: block;
+    }
+  }
+  &__first {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 13px;
+    font-weight: 300;
+    color: #606060;
+    padding: 15px 0 0 18px;
+  }
+}
+
+.catalog {
+  padding-bottom: 100px;
+
+  &__tab {
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.5s all;
+  }
+}
+
+*[dir="rtl"] .register__field_select, :root:lang(ar) .register__field_select, :root:lang(iw) .register__field_select {
+  background-position: left .7em top 50%, 0 0;
+  padding: .6em .8em .5em 1.4em;
+}
+
